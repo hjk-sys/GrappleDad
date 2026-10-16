@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://nvwrvhj2v4e3"]
+
+[ext_resource type="Script" uid="uid://bim77wse1g5rt" path="res://Scenes/hud.gd" id="1_e0onf"]
+
+[node name="HUD" type="CanvasLayer" unique_id=24116764]
+script = ExtResource("1_e0onf")
+
+[node name="HealthCont" type="HBoxContainer" parent="." unique_id=1398563792]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 42
+alignment = 1

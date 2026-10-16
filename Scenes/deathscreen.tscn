@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://diq7xskvne58t"]
+
+[ext_resource type="Script" uid="uid://dtadmol25wwqn" path="res://deathscreen.gd" id="1_nj0ii"]
+[ext_resource type="Texture2D" uid="uid://djkmyobwgnax1" path="res://Assets/pngs/Deathscreen.jpeg" id="2_avh6a"]
+[ext_resource type="Theme" uid="uid://bydnd6ce74a2" path="res://text_theme.tres" id="3_qnoyp"]
+[ext_resource type="AudioStream" uid="uid://doggwxc13msyc" path="res://Assets/Sounds/Death.mp3" id="4_avh6a"]
+
+[node name="Control" type="Control" unique_id=961288128]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("1_nj0ii")
+
+[node name="Deathscreen" type="Sprite2D" parent="." unique_id=1113110830]
+position = Vector2(1.0000305, 265.99997)
+scale = Vector2(1.5133439, 1.4748602)
+texture = ExtResource("2_avh6a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=63834943]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=846983934]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("3_qnoyp")
+text = "Quit"
+
+[node name="death" type="AudioStreamPlayer2D" parent="." unique_id=2024778948]
+stream = ExtResource("4_avh6a")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

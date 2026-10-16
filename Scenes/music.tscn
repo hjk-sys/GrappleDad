@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://3jyach0ja0pi"]
+
+[ext_resource type="AudioStream" uid="uid://bjuvp1eiewg00" path="res://Assets/Sounds/Donkey Kong Country (MP3).zophar/01 Theme.mp3" id="1_fbmny"]
+
+[node name="Music" type="Node" unique_id=516329166]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1490243203]
+stream = ExtResource("1_fbmny")
+autoplay = true

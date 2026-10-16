@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bwgn23t1icqlh"]
+
+[ext_resource type="Script" uid="uid://t7yb05d8oxsa" path="res://Scripts/TitleScreen.gd" id="1_klylv"]
+[ext_resource type="Texture2D" uid="uid://b1isirkwxkpr6" path="res://Assets/pngs/Title Screen.png" id="2_p3fck"]
+[ext_resource type="Theme" uid="uid://bydnd6ce74a2" path="res://text_theme.tres" id="3_55kwv"]
+[ext_resource type="Texture2D" uid="uid://ctjcji8xlj6kx" path="res://Font/Wooden Pixel Art GUI 32x32.png" id="4_12m1t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vd4x"]
+atlas = ExtResource("4_12m1t")
+region = Rect2(162.94, 641.702, 90.36867, 93.961975)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n82rj"]
+texture = SubResource("AtlasTexture_6vd4x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55kwv"]
+texture = ExtResource("4_12m1t")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0061g"]
+atlas = ExtResource("4_12m1t")
+region = Rect2(0.9447632, 1057.434, 94.44779, 28.984009)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mikk"]
+texture = SubResource("AtlasTexture_0061g")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqelc"]
+atlas = ExtResource("4_12m1t")
+region = Rect2(0.1684246, 1057.2576, 95.94697, 29.733643)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5sh6"]
+texture = SubResource("AtlasTexture_sqelc")
+
+[node name="TitleScreen" type="CenterContainer" unique_id=1256110561]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_klylv")
+
+[node name="TitleScreen" type="Sprite2D" parent="." unique_id=2023720005]
+z_index = -1
+position = Vector2(478, 270.5)
+scale = Vector2(0.6861626, 0.4768271)
+texture = ExtResource("2_p3fck")
+
+[node name="Control" type="Control" parent="." unique_id=641564124]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=524895002]
+layout_mode = 0
+offset_left = -374.0
+offset_top = -213.0
+offset_right = -123.0
+offset_bottom = -153.0
+theme = ExtResource("3_55kwv")
+theme_override_colors/font_color = Color(0.8593526, 0.72525233, 0.6230508, 1)
+theme_override_colors/font_shadow_color = Color(0.24555135, 0.00012590704, 6.897738e-05, 0.6901961)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_n82rj")
+theme_override_styles/focus = SubResource("StyleBoxTexture_55kwv")
+text = "  GRAPPLE DAD"
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="." unique_id=831333040]
+layout_mode = 2
+
+[node name="startgame" type="Button" parent="Control2" unique_id=1986432736]
+layout_mode = 0
+offset_left = -314.0
+offset_top = -143.0
+offset_right = -174.0
+offset_bottom = -104.0
+theme = ExtResource("3_55kwv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8mikk")
+text = "Start
+"
+
+[node name="quitgame" type="Button" parent="Control2" unique_id=1905029015]
+layout_mode = 0
+offset_left = -307.0
+offset_top = -94.0
+offset_right = -181.0
+offset_bottom = -52.0
+theme = ExtResource("3_55kwv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_w5sh6")
+text = "Quit"
+
+[connection signal="pressed" from="Control2/startgame" to="." method="_on_startgame_pressed"]
+[connection signal="pressed" from="Control2/quitgame" to="." method="_on_quitgame_pressed"]

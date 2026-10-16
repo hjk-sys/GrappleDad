@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ckydreifybd7s"]
+
+[ext_resource type="Texture2D" uid="uid://dcibicqxbmgp" path="res://Assets/New Piskel-1.png.png" id="1_1rawk"]
+[ext_resource type="Script" uid="uid://c4omrp8voteb8" path="res://Scenes/chain.gd" id="1_4qutg"]
+[ext_resource type="Texture2D" uid="uid://qciensb3aysm" path="res://Assets/Hook.png.png" id="3_wxilx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4qutg"]
+radius = 7.0
+height = 16.0
+
+[node name="Chain" type="Node2D" unique_id=146993775]
+script = ExtResource("1_4qutg")
+
+[node name="Links" type="Sprite2D" parent="." unique_id=1488178260]
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1rawk")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 360)
+
+[node name="ChainTip" type="CharacterBody2D" parent="." unique_id=898169543]
+collision_layer = 4
+
+[node name="Hook" type="Sprite2D" parent="ChainTip" unique_id=258774168]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wxilx")
+offset = Vector2(0, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChainTip" unique_id=1242190686]
+position = Vector2(1, 6)
+shape = SubResource("CapsuleShape2D_4qutg")

@@ -1,0 +1,14 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# macOS
+.DS_Store
+
+# Over GitHub's 100MB file limit
+Assets/Sounds/Donkey Kong Country (MP3).zophar.zip
+
+# Ripped DKC soundtrack: only the track the game uses is committed
+Assets/Sounds/Donkey Kong Country (MP3).zophar/*
+!Assets/Sounds/Donkey Kong Country (MP3).zophar/01 Theme.mp3
+!Assets/Sounds/Donkey Kong Country (MP3).zophar/01 Theme.mp3.import

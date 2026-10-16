@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cftodcwiwnrv8"]
+
+[ext_resource type="Script" uid="uid://wm0coqcr124h" path="res://Scenes/Healthbar.gd" id="1_kogcl"]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1619048641]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kogcl")
+
+[node name="Control" type="Control" parent="." unique_id=1402588646]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1126876898]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1406522648]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
