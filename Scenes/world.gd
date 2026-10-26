@@ -16,3 +16,8 @@ func _ready() -> void:
 
 func _on_character_player_died() -> void:
 	get_tree().change_scene_to_file("res://Scenes/deathscreen.tscn")
+
+
+func _on_goal_body_entered(body: Node2D) -> void:
+	if body is Player:
+		get_tree().change_scene_to_file("res://Scenes/winscreen.tscn")

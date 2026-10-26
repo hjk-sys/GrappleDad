@@ -2910,6 +2910,9 @@ sources/16 = SubResource("TileSetAtlasSource_p5wkl")
 sources/17 = SubResource("TileSetAtlasSource_r74th")
 sources/18 = SubResource("TileSetAtlasSource_04jkj")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goal"]
+size = Vector2(64, 64)
+
 [node name="World" type="Node2D" unique_id=394041001]
 script = ExtResource("1_0fj1v")
 
@@ -3020,4 +3023,13 @@ position = Vector2(-1710, -585)
 [node name="Bat3" parent="." unique_id=1495017292 instance=ExtResource("13_c5t2i")]
 position = Vector2(-2184, -1321)
 
+[node name="Goal" type="Area2D" parent="." unique_id=530127984]
+position = Vector2(448, -3296)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=1840273356]
+shape = SubResource("RectangleShape2D_goal")
+
 [connection signal="player_died" from="Character" to="." method="_on_character_player_died"]
+[connection signal="body_entered" from="Goal" to="." method="_on_goal_body_entered"]

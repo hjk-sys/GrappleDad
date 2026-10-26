@@ -1,0 +1,68 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://Scripts/WinScreen.gd" id="1_win"]
+[ext_resource type="Texture2D" uid="uid://b1isirkwxkpr6" path="res://Assets/pngs/Title Screen.png" id="2_bg"]
+[ext_resource type="Theme" uid="uid://bydnd6ce74a2" path="res://text_theme.tres" id="3_theme"]
+[ext_resource type="Texture2D" uid="uid://ctjcji8xlj6kx" path="res://Font/Wooden Pixel Art GUI 32x32.png" id="4_gui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_label"]
+atlas = ExtResource("4_gui")
+region = Rect2(162.94, 641.702, 90.36867, 93.961975)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_label"]
+texture = SubResource("AtlasTexture_label")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_button"]
+atlas = ExtResource("4_gui")
+region = Rect2(0.9447632, 1057.434, 94.44779, 28.984009)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_button"]
+texture = SubResource("AtlasTexture_button")
+
+[node name="WinScreen" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_win")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(478, 270.5)
+scale = Vector2(0.6861626, 0.4768271)
+texture = ExtResource("2_bg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme = ExtResource("3_theme")
+theme_override_colors/font_color = Color(0.8593526, 0.72525233, 0.6230508, 1)
+theme_override_colors/font_shadow_color = Color(0.24555135, 0.00012590704, 6.897738e-05, 0.6901961)
+theme_override_styles/normal = SubResource("StyleBoxTexture_label")
+text = "YOU MADE IT!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="playagain" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_theme")
+theme_override_styles/normal = SubResource("StyleBoxTexture_button")
+text = "Play Again"
+
+[node name="quitgame" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(160, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_theme")
+theme_override_styles/normal = SubResource("StyleBoxTexture_button")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/playagain" to="." method="_on_playagain_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitgame" to="." method="_on_quitgame_pressed"]

@@ -12,3 +12,6 @@ Assets/Sounds/Donkey Kong Country (MP3).zophar.zip
 Assets/Sounds/Donkey Kong Country (MP3).zophar/*
 !Assets/Sounds/Donkey Kong Country (MP3).zophar/01 Theme.mp3
 !Assets/Sounds/Donkey Kong Country (MP3).zophar/01 Theme.mp3.import
+
+# Exported game builds
+/builds/
