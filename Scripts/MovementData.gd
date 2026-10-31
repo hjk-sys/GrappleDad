@@ -1,7 +1,7 @@
 extends Resource
 class_name MovementData
 
-@export var acceleration = 700
+@export var acceleration = 750
 @export var friction = 1000
 @export var speed = 150
 @export var jump_velocity = -250.0
